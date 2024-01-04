@@ -1,8 +1,5 @@
 # dotfiles
 
-[![Zsh]]
-[![Vim]]
-
 Simple installation process for config files
 
 ## Installation
