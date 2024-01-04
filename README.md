@@ -1,9 +1,17 @@
 # dotfiles
 
 ## Installation
-
 Clone the repository and launch the installation process
-```bash
+```sh
 git clone https://github.com/Egonif/dotfiles.git
 ./dotfiles/install.sh
 ```
+
+## Roadmap
+- [x] Make a README
+- [x] Basic functionnality
+- [ ] Installation process
+    - [x] Zsh config
+        - [x] Aliases
+        - [x] Functions
+    - [ ] Alacritty config file
