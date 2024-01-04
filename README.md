@@ -1,6 +1,6 @@
 # dotfiles
 
-Simple installation process for config files
+Simple installation process for configuration files
 
 ## Installation
 Clone the repository and launch the installation process
@@ -8,13 +8,6 @@ Clone the repository and launch the installation process
 git clone https://github.com/Egonif/dotfiles.git
 ./dotfiles/install.sh
 ```
-
-## Compatibility
-| O/S            | Status  |
-| :------------- | :-----: |
-| Linux          |   ✅    |
-| macOS          |   ✅    |
-| Windows        |   ❌    |
 
 ## Roadmap
 - [x] Make a README
