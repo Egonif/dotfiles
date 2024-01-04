@@ -1,5 +1,10 @@
 # dotfiles
 
+[![Zsh]]
+[![Vim]]
+
+Simple installation process for config files
+
 ## Installation
 Clone the repository and launch the installation process
 ```sh
