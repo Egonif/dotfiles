@@ -12,8 +12,8 @@ git clone https://github.com/Egonif/dotfiles.git
 ## Roadmap
 - [x] Make a README
 - [x] Basic functionnality
-- [ ] Installation process
-    - [x] Zsh config
-        - [x] Aliases
-        - [x] Functions
-    - [ ] Alacritty config file
+- [x] Installation process
+    - [x] oh-my-zsh installation
+    - [x] .zshrc config file (aliases and functions)
+    - [x] .vimrc config file
+    - [x] alacritty.toml config file

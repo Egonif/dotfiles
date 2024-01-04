@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function ask() {
+ask() {
 	read -p "$1 (Y/n): " response
 	[ -z "$response" ] || [ "$response" = "y" ]
 }
@@ -33,6 +33,12 @@ done
 # Vim conf
 if ask "Do you want to install .vimrc?"; then
 	ln -sf "$(realpath ".vimrc")" ~/.vimrc
+fi
+
+# Alacritty conf
+if ask "Do you want to install alacritty.toml?"; then
+	mkdir -p .config/alacritty
+	ln -sf "$(realpath "alacritty.toml")" ~/.config/alacritty/alacritty.toml
 fi
 
 # Install packages and apps
