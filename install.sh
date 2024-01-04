@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function ask() {
-	read -pr "$1 (Y/n): " response
+	read -p "$1 (Y/n): " response
 	[ -z "$response" ] || [ "$response" = "y" ]
 }
 
