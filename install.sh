@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function ask() {
-	read -p "$1 (Y/n): " response
+	read -pr "$1 (Y/n): " response
 	[ -z "$response" ] || [ "$response" = "y" ]
 }
 
@@ -33,7 +33,7 @@ done
 
 # Vim conf
 if ask "Do you want to install .vimrc?"; then
-    	ln -s "$(realpath ".vimrc")" ~/.vimrc
+    	ln -sf "$(realpath ".vimrc")" ~/.vimrc
 fi
 
 # Install packages and apps
@@ -123,9 +123,9 @@ if ask "Do you want to install useful packages and apps?"; then
 		# Update the version of Homebrew
 		brew upgrade
 		
-		brew install ${brew[@]}         # Homebrew App Installer
-		brew install ${cask[@]} --cask  # Casks Installer
-		mas install ${mas[@]}           # Mac App Store Installer
+		brew install "${brew[@]}"        # Homebrew App Installer
+		brew install "${cask[@]}"--cask  # Casks Installer
+		mas install "${mas[@]}"          # Mac App Store Installer
 		# npm install ${npm[@]}           # Install npm apps	
 	fi
 fi
