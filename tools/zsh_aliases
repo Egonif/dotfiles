@@ -3,3 +3,18 @@ alias brewup="brew update && brew upgrade"
 alias caffe="caffeinate -dims"
 alias grep="grep  --color=auto"
 alias lofi="nohup mpv --really-quiet --volume=30 https://play.streamafrica.net/lofiradio & ; rm ~/nohup.out"
+
+# Download audio from YouTube
+ytbaudio(){
+	yt-dlp -o "%(title)s.%(ext)s" -x --audio-format "${2}" "${1}"
+}
+
+# Download video from YouTube
+ytbvideo(){
+	yt-dlp -S "+codec:h264" -o "%(title)s.%(ext)s" "${1}"
+}
+
+# Compress PDF
+compresspdf() {
+	gs -sDEVICE=pdfwrite -dNOPAUSE -dQUIET -dBATCH -dPDFSETTINGS=/${3:-"screen"} -dCompatibilityLevel=1.4 -sOutputFile="${2}" "${1}"
+}
