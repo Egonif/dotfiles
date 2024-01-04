@@ -50,14 +50,12 @@ set foldlevel=99
 
 nnoremap <space> za
 
-au BufNewFile, BufRead *
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
+set showmatch
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set autoindent
+set smarttab
 
 let g:ale_linters = {'python': ['flake8']}
 

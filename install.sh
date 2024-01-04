@@ -26,14 +26,14 @@ echo "Do you want $SH to source: "
 for file in tools/*; do
 	if [ -f "$file" ]; then
 		if ask "$(basename "$file")?"; then
-            		echo "source $(realpath "$file")" >> "$SH"
-        	fi
-    	fi
+			echo "source $(realpath "$file")" >> "$SH"
+        fi
+    fi
 done
 
 # Vim conf
 if ask "Do you want to install .vimrc?"; then
-    	ln -sf "$(realpath ".vimrc")" ~/.vimrc
+	ln -sf "$(realpath ".vimrc")" ~/.vimrc
 fi
 
 # Install packages and apps
