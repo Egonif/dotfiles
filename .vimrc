@@ -50,8 +50,8 @@ set foldlevel=99
 
 nnoremap <space> za
 
-au BufNewFile, BufRead *.py
-    \ set tabstop=7
+au BufNewFile, BufRead *
+    \ set tabstop=4
     \ set softtabstop=4
     \ set shiftwidth=4
     \ set textwidth=79
