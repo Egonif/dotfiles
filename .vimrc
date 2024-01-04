@@ -69,9 +69,19 @@ set ruler
 " Activate mouse interaction
 set mouse=a
 
-" Visual Studio Code Shortcuts
+" VSCode Shortcuts
+" Copy on previous/next line
 map <A-Down> yyp
 map <A-Up> yyP
+" Indentation
+xnoremap <Tab> >gv
+xnoremap <S-Tab> <gv
+" Special characters around selection
+xnoremap ( da(<Esc>pa)<Esc>
+xnoremap [ da[<Esc>pa]<Esc>
+xnoremap { da{<Esc>pa}<Esc>
+xnoremap " da"<Esc>pa"<Esc>
+xnoremap ' da'<Esc>pa'<Esc>
 
 " Multiselect plugins shortcuts
 nmap <Space>v <Plug>(multiselect-checksearched)
