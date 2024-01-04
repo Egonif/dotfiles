@@ -12,7 +12,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=/Users/egon/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -114,17 +114,9 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ip="ifconfig | grep broadcast"
-alias brewup="brew update && brew upgrade"
-alias caffe="caffeinate -dims"
-alias grep="grep  --color=auto"
-alias lofi="nohup mpv --really-quiet --volume=30 https://play.streamafrica.net/lofiradio & ; rm ~/nohup.out"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Sources
-source /Users/egon/GitHub/exec/backup/functions.sh
-source /Users/egon/GitHub/exec/converter/converter.sh
-source /Users/egon/GitHub/dotfiles/tools/compress_pdf.sh
-source /Users/egon/GitHub/dotfiles/tools/ytdlp.sh
+source /home/egon/dotfiles/tools/zsh_aliases
+source /home/egon/dotfiles/tools/zsh_functions

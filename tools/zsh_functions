@@ -7,3 +7,8 @@ ytbaudio(){
 ytbvideo(){
 	yt-dlp -S "+codec:h264" -o "%(title)s.%(ext)s" "${1}"
 }
+
+# Compress PDF
+compresspdf() {
+	gs -sDEVICE=pdfwrite -dNOPAUSE -dQUIET -dBATCH -dPDFSETTINGS=/${3:-"screen"} -dCompatibilityLevel=1.4 -sOutputFile="${2}" "${1}"
+}

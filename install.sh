@@ -21,6 +21,7 @@ fi
 echo >> "$SH"
 
 # Ask for tools to be sourced
+echo "Sources" >> "$SH"
 echo "Do you want $SH to source: "
 for file in tools/*; do
 	if [ -f "$file" ]; then
@@ -33,11 +34,6 @@ done
 # Vim conf
 if ask "Do you want to install .vimrc?"; then
     	ln -s "$(realpath ".vimrc")" ~/.vimrc
-fi
-
-# Zsh conf
-if ask "Do you want to install .zshrc?"; then
-    	ln -s "$(realpath ".zshrc")" ~/.zshrc
 fi
 
 # Install packages and apps
