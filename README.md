@@ -9,6 +9,13 @@ git clone https://github.com/Egonif/dotfiles.git
 ./dotfiles/install.sh
 ```
 
+## Compatibility
+| O/S            | Status  |
+| :------------- | :-----: |
+| Linux          |   ✅    |
+| macOS          |   ✅    |
+| Windows        |   ❌    |
+
 ## Roadmap
 - [x] Make a README
 - [x] Basic functionnality
