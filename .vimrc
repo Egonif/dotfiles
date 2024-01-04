@@ -68,9 +68,12 @@ set ruler
 set mouse=a
 
 " VSCode Shortcuts
+" Move on previous/next line
+nnoremap <A-Down> ddp
+nnoremap <A-Up> dd<Up>P
 " Copy on previous/next line
-map <A-Down> yyp
-map <A-Up> yyP
+nnoremap <S-A-Down> yyp
+nnoremap <S-A-Up> yyP
 " Indentation
 xnoremap <Tab> >gv
 xnoremap <S-Tab> <gv
