@@ -21,7 +21,6 @@ fi
 echo >> "$SH"
 
 # Ask for tools to be sourced
-echo "Sources" >> "$SH"
 echo "Do you want $SH to source: "
 for file in tools/*; do
 	if [ -f "$file" ]; then
