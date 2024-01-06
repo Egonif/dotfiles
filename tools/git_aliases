@@ -1,4 +1,8 @@
+# Aliases
+gs="git status"
+gp="git pull"
+
 # Commit all modifications
-gitall() {
+gall() {
 	git add . && git commit -m "$1" && git push
 }
