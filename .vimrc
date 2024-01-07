@@ -63,7 +63,7 @@ let g:ale_linters = {'python': ['flake8']}
 " Show number on the left and relative number
 set number
 set ruler
-" set relativenumber
+set relativenumber
 
 " Activate mouse interaction
 set mouse=a
