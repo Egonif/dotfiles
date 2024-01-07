@@ -1,6 +1,6 @@
 # Aliases
-gs="git status"
-gp="git pull"
+alias gs="git status"
+alias gp="git pull"
 
 # Commit all modifications
 gall() {
