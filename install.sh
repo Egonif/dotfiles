@@ -31,9 +31,23 @@ if ask "Do you want to install .vimrc?"; then
 	ln -sf "$(realpath ".vimrc")" ~/.vimrc
 fi
 
-# Kitty installation
-./kitty/install.sh
+# Kitty installation and configuration
+if ask "Do you want to install Kitty and preferences?"; then
+	if [ "$(uname)" == "Darwin" ]; then
+		# Homebrew check and installation
+		brew --version || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"	
+		brew install kitty
+	elif [ "$(uname)" == "Linux" ]; then
+		sudo apt install kitty
+	fi
+	# Configuration and preferences setup
+	mkdir -p ~/.config/kitty/themes
+	ln -sf "$(realpath "kitty/kitty.conf")" ~/.config/kitty/kitty.conf
+	cp -rf themes/* ~/.config/kitty/themes/
+fi
 
 # Powerlevel10k installation
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+if ask "Do you want to install powerlevel10k?"; then
+	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+	echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+fi
