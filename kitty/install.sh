@@ -1,5 +1,5 @@
 #!/bin/bash
-source functions.sh
+source ../functions.sh
 
 # Kitty installation and configuration
 if ask "Do you want to install Kitty and preferences?"; then
@@ -13,5 +13,5 @@ if ask "Do you want to install Kitty and preferences?"; then
 	# Configuration and preferences setup
 	mkdir -p ~/.config/kitty/themes
 	ln -sf "$(realpath "kitty/kitty.conf")" ~/.config/kitty/kitty.conf
-	ln -sf kitty/themes/* ~/.config/kitty/themes/
+	cp themes/* ~/.config/kitty/themes/
 fi
