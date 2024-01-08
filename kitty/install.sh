@@ -13,5 +13,5 @@ if ask "Do you want to install Kitty and preferences?"; then
 	# Configuration and preferences setup
 	mkdir -p ~/.config/kitty/themes
 	ln -sf "$(realpath "kitty/kitty.conf")" ~/.config/kitty/kitty.conf
-	cp themes/* ~/.config/kitty/themes/
+	cp -rf themes/* ~/.config/kitty/themes/
 fi
