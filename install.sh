@@ -1,6 +1,12 @@
 #!/bin/bash
 source functions.sh
 
+# Homebrew installation and coreutils
+if ismac; then
+	brew --version || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"	
+	brew install coreutils
+fi
+
 # Check what shell is being used
 SH="${HOME}/.bashrc"
 ZSHRC="${HOME}/.zshrc"
@@ -33,9 +39,8 @@ fi
 
 # Kitty installation and configuration
 if ask "Do you want to install Kitty and preferences?"; then
-	if [ "$(uname)" == "Darwin" ]; then
-		# Homebrew check and installation
-		brew --version || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"	
+	if ismac; then
+		# Homebrew Kitty installation
 		brew install kitty
 	elif [ "$(uname)" == "Linux" ]; then
 		sudo apt install kitty
