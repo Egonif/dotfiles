@@ -1,8 +1,9 @@
+# Aliases
 alias ip="ifconfig | grep broadcast"
 alias brewup="brew update && brew upgrade"
 alias caffe="caffeinate -dims"
 alias grep="grep  --color=auto"
-alias lofi="nohup mpv --really-quiet --volume=30 https://play.streamafrica.net/lofiradio & ; rm ~/nohup.out"
+alias lofi="nohup mpv --really-quiet --volume=50 https://play.streamafrica.net/lofiradio &"
 
 # Download audio from YouTube
 ytbaudio(){
@@ -17,4 +18,56 @@ ytbvideo(){
 # Compress PDF
 compresspdf() {
 	gs -sDEVICE=pdfwrite -dNOPAUSE -dQUIET -dBATCH -dPDFSETTINGS=/${3:-"screen"} -dCompatibilityLevel=1.4 -sOutputFile="${2}" "${1}"
+}
+
+# Sox Rec Videlio
+startrec() {
+  # Some systems provide more than one type of (SoX-compatible)
+  # audio driver, e.g. ALSA & OSS, or SUNAU & AO. Systems can
+  # also have more than one audio device (a.k.a. `sound card').
+  # If more than one audio driver has been built-in to SoX, and
+  # the default selected by SoX when recording or playing is not
+  # the one that is wanted, then the AUDIODRIVER environment
+  # variable can be used to override the default.
+  AUDIODRIVER='alsa'
+  # The AUDIODEV environment variable can be used to override the
+  # default audio device
+  AUDIODEV='hw:0'
+  # Gives the sample rate in Hz (or kHz if appended with 'k') of the file.
+  # For an input file, the most common use for this option is to
+  # inform SoX of the sample rate of a 'raw' ('headerless') audio
+  # file (see the examples in -b and -c above). Occasionally it may
+  # be useful to use this option with a 'headered' file, in order to
+  # override the (presumably incorrect) value in the header—note
+  # that this is only supported with certain file types. For example,
+  # if audio was recorded with a sample-rate of say 48k from a source
+  # that played back a little, say 1. 5%, too slowly
+  RATE=48000
+  # The number of bits (a.k.a. bit-depth or sometimes word-length) in
+  # each encoded sample.  Not applicable to complex encodings such as
+  # MP3 or GSM. Not necessary with encodings that have a fixed number of
+  # bits, e.g. A/μ-law, ADPCM.
+  # For an input file, the most common use for this option is to inform 
+  # SoX of the number of bits per sample in a `raw' (`headerless') audio 
+  # file.
+  # For an output file, this option can be used (perhaps along with -e)
+  # to set the output encoding size.  By default (i.e. if this option 
+  # is not given), the output encoding size will (providing it is supported
+  # by the output file type) be set to the input encoding size.
+  BITS=16
+  # The number of audio channels in the audio file. This can be any number
+  # greater than zero.
+  # For an input file, the most common use for this option is to inform SoX
+  # of the number of channels in a `raw' (`headerless') audio file.
+  # Occasionally, it may be useful to use this option with a `headered'
+  # file, in order to override the (presumably incorrect) value in the
+  # header—note that this is only supported with certain file types.
+  # For an output file, this option provides a shorthand for specifying 
+  # that the channels effect should be invoked in order to change (if necessary) 
+  # the number of channels in the audio signal to the number given.
+  CHANNELS=1
+  rec -r "${RATE}" -b "${BITS}" -c "${CHANNELS}" -t "${AUDIODRIVER}" "${AUDIODEV}" ~/Bureau/"${1}".ogg
+}
+stoprec() {
+
 }
