@@ -1,8 +1,9 @@
+# Aliases
 alias ip="ifconfig | grep broadcast"
 alias brewup="brew update && brew upgrade"
 alias caffe="caffeinate -dims"
 alias grep="grep  --color=auto"
-alias lofi="nohup mpv --really-quiet --volume=30 https://play.streamafrica.net/lofiradio & ; rm ~/nohup.out"
+alias lofi="nohup mpv --really-quiet --volume=50 https://play.streamafrica.net/lofiradio &"
 
 # Download audio from YouTube
 ytbaudio(){
