@@ -6,7 +6,7 @@ Simple installation process for configuration files
 Clone the repository and launch the installation process
 ```sh
 git clone https://github.com/Egonif/dotfiles.git ~/.dotfiles
-./.dotfiles/install.sh
+cd ~/.dotfiles && ./install.sh
 ```
 
 ## Roadmap

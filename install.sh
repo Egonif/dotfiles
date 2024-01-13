@@ -14,11 +14,6 @@ if [ -f "$ZSHRC" ]; then
 	SH="$ZSHRC"
 fi
 
-# Install Oh-My-Zsh
-if ask "Do you want to install oh-my-zsh?"; then
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-fi
-
 # Add a blank line
 echo >> "$SH"
 
@@ -51,10 +46,4 @@ if ask "Do you want to install Kitty and preferences?"; then
 	for theme in kitty/themes/*; do
 		ln -sf "$(realpath ${theme})" ~/.config/kitty/themes/
 	done
-fi
-
-# Powerlevel10k installation
-if ask "Do you want to install powerlevel10k?"; then
-	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-	echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 fi
