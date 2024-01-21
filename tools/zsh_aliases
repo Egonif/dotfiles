@@ -12,7 +12,7 @@ ytbaudio(){
 
 # Download video from YouTube
 ytbvideo(){
-	yt-dlp -S "+codec:h264" -o "%(title)s.%(ext)s" "${1}"
+	yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" -o "%(title)s.%(ext)s" "${1}"
 }
 
 # Compress PDF
