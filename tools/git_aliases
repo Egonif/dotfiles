@@ -1,5 +1,4 @@
 # Aliases
-alias gs="git status"
 alias gp="git pull"
 
 # Commit all modifications
